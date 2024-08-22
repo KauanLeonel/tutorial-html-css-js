@@ -1,13 +1,3 @@
-h2 {
-    color: #7a2b4c;
-}
-h5 {
-    color: #2b757a;
-}
-h6 {
-    color: #45bb2d;
-}
-
 #page {
     width: 900px ;
     margin: 0 auto;
@@ -24,9 +14,11 @@ h6 {
 
 #sidebar {
     width: 150px ;
-    height: 500px;
+    height: 680px;
     background-color: rgb(34, 33, 126);
+    
 }
+
 #content {
     width: 750px ;
     height: 500px;
