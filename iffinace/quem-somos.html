@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>IFFinance</title>
+        <link rel="stylesheet" href="./css/style.css">
+    </head>
+    <body>
+        <header>
+            <div class="wrapper">
+                <div id="logo">
+                    <a href="./index.html">
+                    <img src="./img/finance_mode_24dp_75FB4C_FILL0_wght400_GRAD0_opsz24.svg" alt = "Logo de finanças do IF Finances">
+                        <h1> <b style="color: rgb(0, 255, 42);">IF</b>Finance</h1>
+                        <img src="./img/dragao.svg" alt = "Logo de finanças do IF Finances">
+                    </a>
+                </div>
+                <nav>
+                    <ul>
+                        <li> <a href="./index.html">Home</a></li>
+                        <li> <a class= "active " href="./quem-somos.html">Quem somos</a></li>
+                        <li> <a href="./bolsas.html">Bolsas</a></li>
+                        <li> <a href="./destaques.html">Destaques</a></li>
+                        <li> <a href="./contatos.html">Contatos</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <main>
+            <div class="wrapper">
+                <h1>Quem somos</h1>
+                <div id="mudar">
+                <input type="text" id="cortexto">
+                <button onclick="MudarCor()"> Mudar cor</button>
+                <div id = "Cor"> </div>
+            </div>
+                <div id="calc"> 
+                    <input type="text" id="num1">
+                    <input type="text" id="num2">
+                    <button onclick="Soma()"> +</button>
+                    <button onclick="Subtracao()"> -</button>
+                    <input type="text" id="resu">
+                </div>
+                <script>
+                    function Soma(num1, num2, resu){
+                        resu = num1 + num2;
+                        return resu
+                    }
+                    function Subtracao(num1, num2, resu){
+                        const num1 = document.getElementById('num1')
+                        const num2 = document.getElementById('num2')
+                        var resu = document.getElementById('resu')
+                        resu = num1 - num2;
+                        return resu;
+                    }
+                    function MudarCor(){
+                        const cortexto = document.getElementById('cortexto')
+                        Cor.style.background = document.getElementById('cortexto').value
+                    }
+                </script>
+            </div>
+        </main>
+    </body>
+</html>

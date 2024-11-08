@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IFFinance</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <script>
+        console.log("Deus Seja Louvado")
+        var nome = "Renan";
+        let idade = 40;
+        const pi = 3.14;
+        const idAdmins = [1, 5, 10, 80]
+        //const nomeCompleto = nome + " " + sobrenome
+
+        function nomeCompleto(nome, sobrenome) {
+            return `${nome} ${sobrenome}`
+        }
+
+        const nCompleto = function (nome, sobrenome) {
+            return `${nome} ${sobrenome} `
+        }
+
+        const nmCompleto = (nome, sobrenome) => {
+            return `${nome} ${sobrenome} `
+        }
+
+        const user = {
+            id: 10,
+            nome: "Paulo",
+            sobrenome: "Matias",
+            email: "paulo@gmail.com",
+            nomeCompleto: (nome, sobrenome) => {
+                return `${nome} ${sobrenome}`
+            }
+        }
+        const user2 = {
+            id: 20,
+            nome: "Jorge",
+            email: "jorge@gmail.com"
+        }
+        const user3 = {
+            id: 30,
+            nome: "Arthur",
+            email: "arthur@gmail.com"
+        }
+        const usuario = [user, user2, user3]
+        console.log(`Ola ${nomeCompleto(user.nome, user.sobrenome)}, seja bem-vindo`)
+        console.log(`Ola ${usuario[0].id}, seja bem-vindo`)
+        console.log(`Ola ${usuario[0].nome}, seja bem-vindo`)
+        console.log(`Ola ${usuario[0].email}, seja bem-vindo`)
+        console.log(`Ola ${usuario[1].id}, seja bem-vindo`)
+        console.log(`Ola ${usuario[1].nome}, seja bem-vindo`)
+        console.log(`Ola ${usuario[1].email}, seja bem-vindo`)
+        console.log(`Ola ${usuario[2].id}, seja bem-vindo`)
+        console.log(`Ola ${usuario[2].nome}, seja bem-vindo`)
+        console.log(`Ola ${usuario[2].email}, seja bem-vindo`)
+
+    </script>
+</head>
+
+<body>
+    <header>
+        <div class="wrapper">
+            <div id="logo">
+                <a href="./index.html">
+                    <img src="./img/finance_mode_24dp_75FB4C_FILL0_wght400_GRAD0_opsz24.svg"
+                        alt="Logo de finanças do IF Finances">
+                    <h1> <b style="color: rgb(0, 255, 42);">IF</b>Finance</h1>
+                    <img src="./img/dragao.svg" alt="Logo de finanças do IF Finances">
+                </a>
+            </div>
+            <nav>
+                <ul>
+                    <li> <a class="active " href="./index.html">Home</a></li>
+                    <li> <a href="./quem-somos.html">Quem somos</a></li>
+                    <li> <a href="./bolsas.html">Bolsas</a></li>
+                    <li> <a href="./destaques.html">Destaques</a></li>
+                    <li> <a href="./contatos.html">Contatos</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <div class="wrapper">
+            <div class="flex-bt align-center">
+                <h1>Home</h1>
+                <button style="height: 40px;" onclick="openModal()"> + Adicionar</button>
+            </div>
+        </div>
+    </main>
+    <div class="modal" onclick="closeModal(event)">
+        <main>
+            <header class="flex-bt align-center">
+                <h1> Adicionar Action </h1>
+                <button onclick="closeModal()"> X </button>
+            </header>
+            <div class="align-center">
+            <form id="formulario1">
+                
+                    <label for ="foto"> Insira a foto da empresa</label>
+                    <input type="text" id="foto">
+                    <label for ="nomeEmpresa"> Insira o nome da empresa</label>
+                    <input type="text" id="nomeEmpresa">
+                    <label for ="tiker"> Insira o Tiker</label>
+                    <input type="text" id="tiker">
+                    <label for ="posicao"> Insira a quantidade de ações</label>
+                    <input type="text" id="posicao">
+                    <label for ="totalBolsa"> Total</label>
+                    <input type="text" id="totalBolsa">
+                    <button> Cadastrar</button>
+                     
+                </div>
+            </form>
+        </main>
+    </div>
+</body>
+<script src="./js/main.js"> </script>
+
+</html>

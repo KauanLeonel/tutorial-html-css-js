@@ -1,0 +1,89 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system,'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+} 
+body {
+    background-color: rgb(34, 32, 32);
+}
+header {
+    height:90px;
+    background-color: black;
+}
+
+.wrapper {
+    width: 1000px;
+    margin: 0 auto;
+    color: #fff;
+}
+
+#logo {
+    width: 150px;
+}
+#logo a {
+    display: flex;
+    gap: 10px;
+    text-decoration: none;
+}
+#logo h1 {
+    margin: 0px;
+    color: white;
+}
+header .wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 95px;
+}
+
+nav ul {
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+    gap: 20px;
+    color: rgb(0, 255, 85);
+   
+}
+
+header nav ul li a{
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    padding: 30px 20px;
+}
+header nav ul li a:hover{
+    color: #818181;
+    border-bottom: 3px solid #ffffff;
+}
+.active{
+    border-bottom: 3px solid #00ff55;
+}
+.active:hover{
+    border-bottom: 3px solid #00ff55;
+}
+table {
+    border: 1px solid white;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid white;
+    border-collapse: collapse;
+    padding: 10px;
+}
+
+tr:nth-child(even) {
+    background-color: #405a49;
+}
+tr:nth-child(odd) {
+    background-color: #27924c;
+}
+th:nth-child(1){
+    background-color: #133b20;
+}
+th:nth-child(2){
+    background-color: #133b20;
+}
+th:nth-child(3){
+    background-color: #133b20;
+}

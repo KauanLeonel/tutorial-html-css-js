@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LEGO</title>
+    <link rel="stylesheet" href="lego.css">
+</head>
+<body>
+    <header> 
+    <div class="wrapper">
+    
+</div>
+</header>
+<main>
+    <div class="wrapper">
+        <!-- forms -->
+        <h5> Adicione o link da imagem</h5> 
+    <input type="text" id="txtinput">
+    <label for="opcao"> Qual seria a parte do corpo? </label>
+    <select id="opcao" name="opcao">
+        <option value="1"> Cabeça</option>
+        <option value="2"> Torso</option>
+        <option value="3"> Pernas</option>
+    </select>
+    <button onclick="adicionarImagem()">  Adicionar</button>
+<div id="repositorio">
+    <div class="sep"> 
+    <p>Cabeça</p>
+    <div id="cabeca"> </div>
+</div>
+    
+    <div class="sep">
+    <p>Torso</p>
+    <div id="torso"> </div>
+</div>
+
+    <div class="sep">
+    <p>Pernas</p>
+    <div id="pernas"> </div>
+</div>
+
+    </div>
+</div>
+<div class="wrapper" style="background-color: rgb(37, 43, 32);"> 
+    <div id="repositoriofoto">
+        <div id="cabecafoto"> </div>
+        <div id="torsofoto"> </div>
+        <div id="pernasfoto"> </div>
+        </div>
+</div>
+<script>
+    let tipo = 0;
+    function adicionarImagem(){
+    const txtinput = document.getElementById('txtinput').value
+    const opcaoSelecionada = document.getElementById("opcao").value
+    const cabeca = document.getElementById('cabeca')
+    const torso = document.getElementById('torso')
+    const pernas = document.getElementById('pernas')
+    tipo = parseInt (opcaoSelecionada);
+    console.log (txtinput)
+    if (tipo == 1){
+        cabeca.innerHTML +=  `<button  onclick="aplicarLego('${txtinput}') ;style="width: 50px; height: 50px; background: #000; margin: 10px; max-width: 50px; max-height: 50px; background-size:contain"> <img src=${txtinput}> </button>`
+    }
+    if (tipo == 2){
+        torso.innerHTML +=  `<button onclick="adicioanar()";style="width: 50px; height: 50px; background: #000; margin: 10px; background-image: url(txtinput); max-width: 50px; max-height: 50px; background-size:contain"> <img src=${txtinput}> </button>`
+    }
+    if (tipo == 3){
+        pernas.innerHTML +=  `<button  ;style="width: 50px; height: 50px; background: #000; margin: 10px; background-image: url(txtinput); max-width: 50px; max-height: 50px; background-size:contain"> <img src=${txtinput}> </button>`
+    }
+
+    
+    function aplicarLego(txtinput){
+     txtinput = txtinput.value
+        
+    if (tipo == 1){
+        cabeca = document.getElementById('cabecafoto').value
+        console.log(cabeca)
+        cabeca.style.background =txtinput
+        cabeca.innerHTML = `<p>${txtinput}</p>`
+
+    }
+    
+    if (tipo == 2){
+        torso = document.getElementById('torsofoto').value
+        console.log(tors)
+        torso.style.background =txtinput
+        torso.innerHTML = `<p>${txtinput}</p>`
+
+    }
+    if (tipo == 3){
+        pernas = document.getElementById('pernasfoto').value
+        console.log(cabeca)
+        pernas.style.background =txtinput
+        pernas.innerHTML = `<p>${txtinput}</p>`
+    }
+    }function adicionar(){
+    const txtinput = document.getElementById('txtinput').value
+    const opcaoSelecionada = document.getElementById("opcao").value
+    const cabeca = document.getElementById('cabeca')
+    const torso = document.getElementById('torso')
+    const pernas = document.getElementById('pernas')
+    tipo = parseInt (opcaoSelecionada);
+    console.log (txtinput)
+    if (tipo == 1){
+        cabeca.innerHTML =  `<button onclick="aplicarLego('${txtinput}')" img ;style="width: 100%; height: 100%; background: #000; margin: 10px; background-image: url(txtinput); max-width: 50px; max-height: 50px; background-size:contain"> <img src=${txtinput}> </button>`
+    }
+    if (tipo == 2){
+        torso.innerHTML =  `<button img ;style="width: 50px; height: 50px; background: #000; margin: 10px; background-image: url(txtinput); max-width: 50px; max-height: 50px; background-size:contain"> <img src=${txtinput}> </button>`
+    }
+    if (tipo == 3){
+        pernas.innerHTML =  `<button img ;style="width: 50px; height: 50px; background: #000; margin: 10px; background-image: url(txtinput); max-width: 50px; max-height: 50px; background-size:contain"> <img src=${txtinput}> </button>`
+    }
+    }
+    }
+</script>
+</main>
+</body>
+</html>
