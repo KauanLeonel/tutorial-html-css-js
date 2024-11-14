@@ -42,7 +42,7 @@
 
     </div>
 </div>
-<div class="wrapper" style="background-color: rgb(37, 43, 32);"> 
+<div class="wrapper" style="background-color: rgb(166, 199, 138);"> 
     <div id="repositoriofoto">
         <div id="cabecafoto"> </div>
         <div id="torsofoto"> </div>
@@ -60,7 +60,7 @@
     tipo = parseInt (opcaoSelecionada);
     console.log (txtinput)
     if (tipo == 1){
-        cabeca.innerHTML +=  `<button  onclick="aplicarLego('${txtinput}') ;style="width: 50px; height: 50px; background: #000; margin: 10px; max-width: 50px; max-height: 50px; background-size:contain"> <img src=${txtinput}> </button>`
+        cabeca.innerHTML +=  `<button onclick="aplicarLego('${txtinput}')" ;style="width: 50px; height: 50px; background: #000; margin: 10px; max-width: 50px; max-height: 50px; background-size:contain"> <img src=${txtinput}> </button>`
     }
     if (tipo == 2){
         torso.innerHTML +=  `<button onclick="adicioanar()";style="width: 50px; height: 50px; background: #000; margin: 10px; background-image: url(txtinput); max-width: 50px; max-height: 50px; background-size:contain"> <img src=${txtinput}> </button>`
@@ -68,16 +68,17 @@
     if (tipo == 3){
         pernas.innerHTML +=  `<button  ;style="width: 50px; height: 50px; background: #000; margin: 10px; background-image: url(txtinput); max-width: 50px; max-height: 50px; background-size:contain"> <img src=${txtinput}> </button>`
     }
-
+}
     
     function aplicarLego(txtinput){
-     txtinput = txtinput.value
         
     if (tipo == 1){
-        cabeca = document.getElementById('cabecafoto').value
+        cabeca = document.getElementById('cabecafoto')
         console.log(cabeca)
-        cabeca.style.background =txtinput
-        cabeca.innerHTML = `<p>${txtinput}</p>`
+        console.log(txtinput)
+        //cabeca.background-image: url('${txtinput}');
+        cabeca.style.background =(`${txtinput}`) //o erro está aqui, ele pega o parágrafo 
+        //cabeca.innerHTML = `<p>${txtinput}</p>`
 
     }
     
@@ -112,7 +113,7 @@
         pernas.innerHTML =  `<button img ;style="width: 50px; height: 50px; background: #000; margin: 10px; background-image: url(txtinput); max-width: 50px; max-height: 50px; background-size:contain"> <img src=${txtinput}> </button>`
     }
     }
-    }
+    
 </script>
 </main>
 </body>
