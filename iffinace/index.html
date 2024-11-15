@@ -88,31 +88,45 @@
                 <h1>Home</h1>
                 <button style="height: 40px;" onclick="openModal()"> + Adicionar</button>
             </div>
+            <div id="card-list">
+                <div class="card-ticker">
+                    <header>
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFkkGNhxdNrL5NQWGlnznCSPfIN15sDxjTGQ&s" alt="Logo">
+                        <h4>APPLE</h4>
+                        <span> APPL</span>
+                    </header>
+                    <main>
+                        <p>Valor: <span style="color: green">150,00 <span>🔺🔻</span></span></p>
+                    </main>
+                    <footer>
+                        <p>Quantidade: 20</p>
+                        <p>Posição: R$: 23.434,43</p>
+                    </footer>
+                </div>
+            </div>
         </div>
     </main>
     <div class="modal" onclick="closeModal(event)">
         <main>
             <header class="flex-bt align-center">
-                <h1> Adicionar Action </h1>
+                <h1 style="color: white;"> Adicionar </h1>
                 <button onclick="closeModal()"> X </button>
             </header>
-            <div class="align-center">
-            <form id="formulario1">
-                
-                    <label for ="foto"> Insira a foto da empresa</label>
-                    <input type="text" id="foto">
-                    <label for ="nomeEmpresa"> Insira o nome da empresa</label>
-                    <input type="text" id="nomeEmpresa">
-                    <label for ="tiker"> Insira o Tiker</label>
-                    <input type="text" id="tiker">
-                    <label for ="posicao"> Insira a quantidade de ações</label>
-                    <input type="text" id="posicao">
-                    <label for ="totalBolsa"> Total</label>
-                    <input type="text" id="totalBolsa">
-                    <button> Cadastrar</button>
-                     
-                </div>
-            </form>
+                <form onsubmit="AddTicket(event)" style=" width: 100%;"> //preparado para receber o submite
+                        <label for="urlLogo">URL logo: </label>
+                        <input type="text" id="urlLogo" name="urlLogo">
+                        <label for="nameCompany">Nome da empresa:</label>
+                        <input type="text" id="nameCompany" name="nameCompany">
+                        <label for="ticker">Simbolo:</label>
+                        <input type="text" id="ticker" name="ticker">
+                        <label for="quality">Quantidade:</label>
+                        <input type="text" id="quality" name="quality">
+                        <label for="closeValue">Valor da ação:</label>
+                        <input type="text" id="closeValue" name="closeValue">
+        
+                    <input type="submit" value="Enviar">
+                </form>
+
         </main>
     </div>
 </body>

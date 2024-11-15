@@ -163,8 +163,8 @@ input[type=submit]:hover, button:hover{
 }
 
 .modal main{
-    background-color: rgb(214, 214, 214);
-    width: 700px;
+    background-color: rgb(26, 26, 26);
+    width: 300px;
     height: 500px;
     border-radius: 20px;
     padding: 20px;
@@ -172,6 +172,8 @@ input[type=submit]:hover, button:hover{
 .modal main header{
     background: none;
     height: auto;
+    margin: 0 0 16px 0;
+
 }
 .modal main header h1{
     margin: 0;
@@ -192,3 +194,55 @@ input[type=submit]:hover, button:hover{
     height: auto;
     width: 300px;
 }
+
+.mordal main form{
+    width: 100%;
+}
+.card-ticker{
+    width: 300px;
+    background:rgb(0, 255, 85);
+    border-radius: 10px;
+    background-color: rgb(65, 64, 64);
+    padding: 20px;
+}
+
+.card-ticker header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    height: auto;
+    background: none;
+}
+
+.card-ticker header img{
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+}
+
+.card-ticker header h4{
+    margin: 0;
+}
+
+.card-ticker header span{
+    margin: 0 0 0 auto;
+}
+
+.card-ticker main p span span{
+    font-size: 20px;
+}
+
+.card-ticker footer{
+    display: flex;
+    justify-content: space-between;
+}
+.card-ticker footer p{
+    color: gray
+    margin: 0 0 0 0;
+}
+
+.card-ticker footer p span{
+    color: gray
+    font-size: 18px;
+}
+#card
