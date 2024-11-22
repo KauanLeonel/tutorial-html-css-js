@@ -86,10 +86,10 @@
         <div class="wrapper">
             <div class="flex-bt align-center">
                 <h1>Home</h1>
-                <button style="height: 40px;" onclick="openModal()"> + Adicionar</button>
+                <button style="height: 40px;" onclick="openModal('#modal-add-ticker')"> + Adicionar</button>
             </div>
             <div id="card-list">
-                <div class="card-ticker">
+                <div class="card-ticker" onmouseenter="showCardOptions(event)" onmouseleave="hideCardOptions(event)">
                     <header>
                         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFkkGNhxdNrL5NQWGlnznCSPfIN15sDxjTGQ&s" alt="Logo">
                         <h4>APPLE</h4>
@@ -102,29 +102,56 @@
                         <p>Quantidade: 20</p>
                         <p>Posição: R$: 23.434,43</p>
                     </footer>
+                    <div class="card-options">
+                            <button>Editar</button>
+                            <button onclick="removeCard(event)">Excluir</button>
+                    </div>
                 </div>
             </div>
         </div>
     </main>
-    <div class="modal" onclick="closeModal(event)">
+    <div class="modal" id="modal-add-ticker"onclick="closeModal(event, '#modal-add-ticker')">
         <main>
             <header class="flex-bt align-center">
-                <h1 style="color: white;"> Adicionar </h1>
-                <button onclick="closeModal()"> X </button>
+                <h1> Adicionar</h1>
+                <button onclick="closeModal(null, '#modal-add-ticker')" style="color: white;"> X </button>
             </header>
-                <form onsubmit="AddTicket(event)" style=" width: 100%;"> //preparado para receber o submite
+                <form onsubmit="AddTicker(event)" style=" width: 100%;"> <!-- preparado para receber o submite -->
                         <label for="urlLogo">URL logo: </label>
                         <input type="text" id="urlLogo" name="urlLogo">
                         <label for="nameCompany">Nome da empresa:</label>
                         <input type="text" id="nameCompany" name="nameCompany">
                         <label for="ticker">Simbolo:</label>
                         <input type="text" id="ticker" name="ticker">
-                        <label for="quality">Quantidade:</label>
-                        <input type="text" id="quality" name="quality">
-                        <label for="closeValue">Valor da ação:</label>
-                        <input type="text" id="closeValue" name="closeValue">
+                        <label for="quantity">Quantidade:</label>
+                        <input type="text" id="quantity" name="quantity">
+                        <label for="closedValue">Valor da ação:</label>
+                        <input type="text" id="closedValue" name="closedValue">
         
-                    <input type="submit" value="Enviar">
+                    <input type="submit" value="Adicionar">
+                </form>
+
+        </main>
+    </div>
+    <div class="modal" id="modal-edit-ticker" onclick="closeModal(event, '#modal-edit-ticker')">
+        <main>
+            <header class="flex-bt align-center">
+                <h1> Editar Ação</h1>
+                <button onclick="closeModal(null, '#modal-edit-ticker')" style="color: white;"> X </button>
+            </header>
+                <form onsubmit="uptadeTicker(event)" style=" width: 100%;"> <!-- preparado para receber o submite -->
+                        <label for="eUrlLogo">URL logo: </label>
+                        <input type="text" id="eUrlLogo" name="urlLogo">
+                        <label for="eNameCompany">Nome da empresa:</label>
+                        <input type="text" id="eNameCompany" name="nameCompany">
+                        <label for="ticker">Simbolo:</label>
+                        <input type="text" id="eTicker" name="ticker">
+                        <label for="eQuantity">Quantidade:</label>
+                        <input type="text" id="eQuantity" name="quantity">
+                        <label for="eClosedValue">Valor da ação:</label>
+                        <input type="text" id="eClosedValue" name="closedValue">
+        
+                    <input type="submit" value="Editar">
                 </form>
 
         </main>

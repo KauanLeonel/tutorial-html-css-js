@@ -19,6 +19,7 @@ form {
     width: 1000px;
     margin: 0 auto;
     color: #fff;
+
 }
 #Cor {
     width: 150px;
@@ -160,6 +161,7 @@ input[type=submit]:hover, button:hover{
     display: none;
     justify-content: center;
     align-items: center;
+    color: white;
 }
 
 .modal main{
@@ -204,7 +206,10 @@ input[type=submit]:hover, button:hover{
     border-radius: 10px;
     background-color: rgb(65, 64, 64);
     padding: 20px;
+    position: relative;
+    margin: 10px 10px;
 }
+
 
 .card-ticker header {
     display: flex;
@@ -237,12 +242,28 @@ input[type=submit]:hover, button:hover{
     justify-content: space-between;
 }
 .card-ticker footer p{
-    color: gray
+    color: gray;
     margin: 0 0 0 0;
 }
 
 .card-ticker footer p span{
-    color: gray
+    color: gray;
     font-size: 18px;
 }
-#card
+
+.card-ticker .card-options{
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.623);
+    display: none;
+    border-radius: 10px;
+    justify-content: center;
+    align-items: center;
+    gap: 20px
+}
+#card-list{
+    display: flex;
+}
