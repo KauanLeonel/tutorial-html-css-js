@@ -93,9 +93,17 @@ function editTicker(event){
     const urlLogo = imgLogo.getAttribute('src') //pegar um atributo, tipo pegar só a url.
     document.querySelector('#eUrlLogo').value = urlLogo
 
-
     const nameCompany = cardTicker.querySelector('header h4').innerText
-    document.querySelector('#eNameCompany').value= nameCompany
+    document.querySelector('#eNameCompany').value = nameCompany
+
+    const ticker = cardTicker.querySelector('header span').innerText
+    document.querySelector('#eTicker').value = ticker
+
+    const closedValue = cardTicker.querySelector('main p span').innerText
+    document.querySelector('#eClosedValue').value = closedValue.split(' ')[0]
+
+    const quantity = cardTicker.querySelector('footer p span').innerText
+    document.querySelector('#eQuantity').value = quantity
 
     openModal('#modal-edit-ticker')
 }
@@ -122,19 +130,19 @@ function uptadeTicker(event){
     }
 
     addOrUptadeTicker(tickerData)
-    closeModal()
+    closeModal(null, "#modal-edit-ticker")
 
 }
 
 function addOrUptadeTicker(tickerData){
-    const ticker = document.querySelector(`#tickerData.ticker`)
+    const ticker = document.querySelector(`#${tickerData.ticker}`)
     console.log(ticker)
     if(ticker){
         ticker.querySelector('header img').setAttribute('src', tickerData.urlLogo)
         ticker.querySelector('header h4').innerHTML = tickerData.nameCompany
         ticker.querySelector('main p span').innerHTML = tickerData.closedValue + ' '
         ticker.querySelector('footer p span').innerHTML = tickerData.quantity
-        ticker.querySelector('footer p:last-child span').innerHTML = 'R$' + (tickerData.quantity * tickerData.closeModal)
+        ticker.querySelector('footer p:last-child span').innerHTML = 'R$' + (+tickerData.quantity * +tickerData.closedValue)
         
     } else{
         const cardList = document.querySelector('#card-list')
@@ -150,7 +158,7 @@ function addOrUptadeTicker(tickerData){
                         </main>
                         <footer>
                             <p>Quantidade: <span> ${tickerData.quantity} </span></p>
-                            <p>Posição: <span>R$: ${tickerData.quantity * tickerData.closeModal}</span></p>
+                            <p>Posição: <span>R$: ${+tickerData.quantity * +tickerData.closedValue}</span></p>
                             <div class="card-options">
                                 <button onclick="editTicker(event)">Editar</button>
                                 <button onclick="removeCard(event)">Excluir</button>
