@@ -88,7 +88,7 @@ function removeCard(event){
 
 function editTicker(event){
     const cardTicker = event.target.closest('.card-ticker')
-    console.log(cardTicker)
+    //console.log(cardTicker)
     const imgLogo = cardTicker.querySelector('header img')
     const urlLogo = imgLogo.getAttribute('src') //pegar um atributo, tipo pegar só a url.
     document.querySelector('#eUrlLogo').value = urlLogo
@@ -110,7 +110,6 @@ function editTicker(event){
 
 function uptadeTicker(event){
     event.preventDefault()
-    const cardList = document.querySelector('#card-list')
 
     const urlLogo= event.target.eUrlLogo.value
     const nameCompany = event.target.eNameCompany.value
@@ -142,7 +141,9 @@ function addOrUptadeTicker(tickerData){
         ticker.querySelector('header h4').innerHTML = tickerData.nameCompany
         ticker.querySelector('main p span').innerHTML = tickerData.closedValue + ' '
         ticker.querySelector('footer p span').innerHTML = tickerData.quantity
-        ticker.querySelector('footer p:last-child span').innerHTML = 'R$' + (+tickerData.quantity * +tickerData.closedValue)
+        //console.log(ticker.querySelector('footer p span'))
+        console.log(ticker.querySelector('footer p:nth-child(1) span'))
+        ticker.querySelector('footer p:nth-child(2) span').innerHTML = 'R$' + (+tickerData.quantity * +tickerData.closedValue)
         
     } else{
         const cardList = document.querySelector('#card-list')
@@ -150,7 +151,7 @@ function addOrUptadeTicker(tickerData){
                         <div class="card-ticker" id ="${tickerData.ticker}" onmouseenter="showCardOptions(event)" onmouseleave="hideCardOptions(event)">
                         <header>
                             <img src="${tickerData.urlLogo}" alt="Logo">
-                            <h4>${tickerData.nameCompany}</h4>
+                            <h4>${tickerData.nameCompany}</h4> 
                             <span> ${tickerData.ticker}</span>
                         </header>
                         <main>
@@ -162,7 +163,7 @@ function addOrUptadeTicker(tickerData){
                             <div class="card-options">
                                 <button onclick="editTicker(event)">Editar</button>
                                 <button onclick="removeCard(event)">Excluir</button>
-                        </div>
+                            </div>
                         </footer>
                     </div>
                `
